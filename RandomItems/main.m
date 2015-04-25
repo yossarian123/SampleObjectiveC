@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "BNRItem.h"
+#import "BNRContainer.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
         NSMutableArray *items = [[NSMutableArray alloc] init];
-        
+        BNRContainer *theContainer = [[BNRContainer alloc]initWithItemName:@"Big Daddy" withValueInDollars:45 withSerialNumber:@"ABCDEDFG"];
+        BNRContainer *subContainer = [[BNRContainer alloc]initWithItemName:@"SubContainer" withValueInDollars:100 withSerialNumber:@"ABCDEDFG"];
+
 //        [items addObject:@"One"];
 //        [items addObject:@"Two"];
 //        [items addObject:@"Three"];
@@ -34,19 +37,31 @@ int main(int argc, const char * argv[]) {
 //        NSLog(@"%@", itemNameOnly);
 //        NSLog(@"%@", itemNoName);
 
-        for (int i=0; i<10; i++) {
+        
+        for (int i=0; i<20; i++) {
+            
+            //uncomment for randomized selection
             BNRItem *item = [BNRItem randomItem];
             
-            [items addObject:item];
-            
+            if( i % 2 == 0)
+            {
+                [theContainer addItem:item];
+            }
+            else
+            {
+                [subContainer addItem:item];
+            }
+//            BNRItem *item = [BNRItem randomItem];
+//            
+//            [items addObject:item];
+//            
         }
         
-        [items addObject:[[BNRItem alloc] initWithItemName:@"Bruce Jenner" andWithSerialNumber:@"F2A2"]];
+        [theContainer addItem:subContainer];
+        [theContainer addItem:[[BNRItem alloc] initWithItemName:@"Bruce Jenner" andWithSerialNumber:@"F2A2"]];
         
-        for(BNRItem *item in items)
-        {
-            NSLog(@"%@", item);
-        }
+        NSLog(@"%@", theContainer);
+        
         items = nil;
     }
     return 0;
