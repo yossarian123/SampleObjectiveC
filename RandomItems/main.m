@@ -40,6 +40,9 @@ int main(int argc, const char * argv[]) {
             [items addObject:item];
             
         }
+        id lastObj = [items lastObject];
+        
+        [lastObj count];
         
         for(BNRItem *item in items)
         {
