@@ -92,8 +92,8 @@
     NSInteger nounIndex = arc4random() % [randomNouns count];
     
     NSString *randomName = [NSString stringWithFormat:@"%@ %@",
-                            [randomArray objectAtIndex:adjectiveIndex],
-                            [randomNouns objectAtIndex:nounIndex]];
+                            randomArray[adjectiveIndex],
+                            randomNouns[nounIndex]];
     
     int randomValue = arc4random() % 100;
     
