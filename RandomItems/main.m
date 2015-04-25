@@ -41,6 +41,8 @@ int main(int argc, const char * argv[]) {
             
         }
         
+        [items addObject:[[BNRItem alloc] initWithItemName:@"Bruce Jenner" andWithSerialNumber:@"F2A2"]];
+        
         for(BNRItem *item in items)
         {
             NSLog(@"%@", item);
