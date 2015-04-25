@@ -38,4 +38,6 @@
 
 - (instancetype) initWithItemName:(NSString *)name;
 
+- (instancetype) initWithItemName : (NSString*)name
+                  andWithSerialNumber: (NSString*)serial;
 @end

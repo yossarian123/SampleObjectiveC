@@ -82,6 +82,12 @@
     return [self initWithItemName:@"Item"];
 }
 
+- (instancetype) initWithItemName : (NSString*)name
+               andWithSerialNumber: (NSString*)serial
+{
+    return [self initWithItemName:name withValueInDollars:0 withSerialNumber:serial];
+}
+
 + (instancetype) randomItem
 {
     NSArray *randomArray = @[@"Fluffy", @"Rusty", @"Shiny"];
